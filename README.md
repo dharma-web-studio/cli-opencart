@@ -17,9 +17,12 @@ This is a CLI tool compatible with OpenCart 4.x.x.x, and inspired in [oc_cli](ht
 
 ### Quick Setup
 
-#### Using [modman](https://github.com/colinmollenhour/modman).
-
 ```
-modman init
-modman clone https://github.com/dharmawebstudio/cli-opencart
+git clone https://github.com/dharmawebstudio/cli-opencart  ./cli-opencart
+mv ./cli-opencart/admin/controller/cli ./${OPENCART_ADMIN}/controller/cli
+mv ./cli-opencart/system/config/cli.php ./system/config/cli.php
+mv ./cli-opencart/system/library/cli.php ./system/library/cli.php
+mv ./cli-opencart/system/cli-framework.php ./system/cli-framework.php
+mv ./cli-opencart/cli.php ./cli.php
+rm -rf ./cli-opencart
 ```

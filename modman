@@ -1,5 +1,0 @@
-admin/controller/cli/ admin/controller/cli
-system/config/cli.php system/config/cli.php
-library/cli.php library/cli.php
-library/cli-framework.php library/cli-framework.php
-cli.php cli.php
