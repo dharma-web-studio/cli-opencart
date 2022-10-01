@@ -19,43 +19,30 @@ class CLI {
         global $argv;
 
         if (empty($argv[2]) || $argv[2] == 'cli/router') {
+            $this->echo_not_found();
             $route = $this->registry->get('config')->get('action_default');
         } else {
             $route = str_replace('../', '', (string)$argv[2]);
-        }
-
-        $output = null;
-
-        // Trigger the pre events
-        $result = $this->registry->get('event')->trigger('controller/' . $route . '/before', array(&$route, &$data, &$output));
-
-        if (!is_null($result)) {
-            return $result;
+            $route = str_replace(':', '|', (string)$route);
         }
 
         // We dont want to use the loader class as it would make any controller callable.
-        $action = new Action($route);
+        $action = new \Opencart\System\Engine\Action($route);
 
-        // Any output needs to be another Action object.
+        // Any other output needs to be another Action object.
         $params = array_slice($argv, 3);
+
         $output = $action->execute($this->registry, $params);
-
-        // Trigger the post events
-        $result = $this->registry->get('event')->trigger('controller/' . $route . '/after', array(&$route, &$data, &$output));
-
-        if (!is_null($result)) {
-            return $result;
-        }
 
         return $output;
     }
 
     public function echo_invalid_request() {
-        cli_output("Invalid request!", 1);
+        cli_output("Invalid request!", true);
     }
 
     public function echo_not_found() {
-        cli_output("Route not found!", 1);
+        cli_output("Route not found!", true);
     }
 
     public function echo_welcome_message() {

@@ -1,11 +1,39 @@
 <?php
-
-// Function definitions
 if (!function_exists('cli_output')) {
-    function cli_output($message, $exit_status = NULL) {
+    function cli_output($message, $exit_status = null) {
         echo $message . PHP_EOL;
 
-        if ($exit_status !== NULL) {
+        if ($exit_status !== null) {
+            exit($exit_status);
+        }
+    }
+}
+
+if (!function_exists('cli_output_array')) {
+    function cli_output_array($array, $before = null, $after = null, $exit_status = null) {
+        if(!is_array($array)) {
+            cli_output('This output method only accept arrays', true);
+        }
+
+        $message = '';
+        foreach ($array as $item) {
+            $message .= $item . PHP_EOL;
+        }
+
+        if($before !== null) {
+            echo PHP_EOL;
+            echo '====================================' . PHP_EOL;
+            echo  $before . PHP_EOL;
+            echo '====================================' . PHP_EOL;
+        }
+
+        echo $message . PHP_EOL;
+
+        if($after !== null) {
+            echo $after;
+        }
+
+        if ($exit_status !== null) {
             exit($exit_status);
         }
     }
