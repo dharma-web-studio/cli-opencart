@@ -20,6 +20,7 @@ This is a CLI tool compatible with OpenCart 4.x.x.x, and inspired in [oc_cli](ht
 ```
 git clone https://github.com/dharmawebstudio/cli-opencart  ./cli-opencart
 mv ./cli-opencart/admin/controller/cli ./REPLACE-WITH-ADMIN-DIRECTORY-NAME/controller/cli
+mv ./cli-opencart/admin/language/en-gb-/cli ./REPLACE-WITH-ADMIN-DIRECTORY-NAME/language/en-gb-/cli
 mv ./cli-opencart/system/config/cli.php ./system/config/cli.php
 mv ./cli-opencart/system/library/cli.php ./system/library/cli.php
 mv ./cli-opencart/system/cli-framework.php ./system/cli-framework.php
