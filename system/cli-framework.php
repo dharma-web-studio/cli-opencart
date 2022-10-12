@@ -26,7 +26,7 @@ $registry->set('config', $config);
 // Set the default time zone
 date_default_timezone_set($config->get('date_timezone'));
 
-/*
+
 // Check if this is already loaded at this point.
 $log = new \Opencart\System\Library\Log($config->get('error_filename'));
 $registry->set('log', $log);
@@ -83,7 +83,6 @@ set_exception_handler(function(\Throwable $e) use ($log, $config)  {
         exit();
     }
 });
-*/
 
 // Event
 $event = new \Opencart\System\Engine\Event($registry);
