@@ -98,9 +98,6 @@ class Extension extends \Opencart\System\Engine\Controller {
 
     public function install(string $code) {
 
-//        $files = $this->listAllFiles(DIR_EXTENSION . $code . '/', $code);
-//        cli_output_array($files, '','', true);
-
         cli_output('Installing ' . $code);
 
         $this->load->language('cli/extension');

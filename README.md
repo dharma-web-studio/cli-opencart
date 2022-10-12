@@ -1,6 +1,6 @@
 <h1 align="center">dharmawebstudio/cli-opencart</h1>
 <div align="center">
-  <p>Dharma Web Studio's CLI for OpenCart 4, intended to be used only as in development environment</p>
+  <p>Dharma Web Studio's CLI for OpenCart 4, intended to be used only in development environment</p>
   <img src="https://img.shields.io/badge/opencart-4.0.1.1-blue" alt="Supported OpenCart Versions" />
   <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
 </div>
