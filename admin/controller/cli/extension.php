@@ -1,5 +1,6 @@
 <?php
 namespace Opencart\Admin\Controller\Cli;
+
 class Extension extends \Opencart\System\Engine\Controller {
 
     public const DEBUG_MODE = true;
