@@ -179,6 +179,15 @@ class Extension extends \Opencart\System\Engine\Controller {
 
     public function uninstall(string $type, string $code) {
 
+        $files = $this->listAllFiles(DIR_EXTENSION . $code . '/', $code);
+
+        // Check if any of the files already exist.
+        foreach ($files as $file) {
+
+            $this->model_setting_extension->addPath($extension_install_id, $prefix . $path);
+        }
+
+
         $extension_install_info = $this->model_setting_extension->getInstallByCode($code);
         cli_output('Uninstalling ' . $code);
         $this->model_setting_extension->uninstall($type, $code);
